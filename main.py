@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-from stats import get_num_words
-from stats import get_book_text
-from stats import get_char_count
 from stats import print_report
+import sys
 
 def main():
-    print_report("books/frankenstein.txt")
+    if (len(sys.argv) != 2):
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    print_report(sys.argv[1])
 
 main()
